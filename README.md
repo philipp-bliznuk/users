@@ -31,10 +31,10 @@ with payload:
   "name": "user first name",
   "surname": "user last name",
   "sex": "[0-1] | 0 - Male, 1 - Female",
-  "age": user age,
+  "age": "user age",
   "activities": [
     {"name": "activity name"},
-    ...
+    "..."
   ]
 }
 ```
