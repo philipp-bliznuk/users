@@ -1,0 +1,18 @@
+version: '2'
+services:
+  db:
+    image: mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: Ea7sa7le
+      MYSQL_DATABASE: users
+  web:
+    image: python:3
+    command: /bin/bash -c "cd /web && pip3 install -r requirements.txt && python3 manage.py migrate --noinput && python3 manage.py runserver 0.0.0.0:8000"
+    environment:
+      MYSQL_PWD: Ea7sa7le
+    volumes:
+      - .:/web
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
